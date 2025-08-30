@@ -79,6 +79,21 @@ const Portfolio = () => {
         
         <div className="container">
           <div className="hero-content">
+            <div className="hero-text">
+              <h1 className="hero-title">
+                Alex Johnson
+              </h1>
+              
+              <p className="hero-subtitle">
+                Full Stack Developer & Software Engineer
+              </p>
+              
+              <p className="hero-description">
+                Passionate about creating elegant solutions to complex problems. 
+                Specialized in modern web technologies and scalable applications.
+              </p>
+            </div>
+            
             <div className="profile-image-container">
               <img 
                 src={profileImage}
@@ -87,19 +102,6 @@ const Portfolio = () => {
               />
               <div className="profile-overlay"></div>
             </div>
-            
-            <h1 className="hero-title">
-              Alex Johnson
-            </h1>
-            
-            <p className="hero-subtitle">
-              Full Stack Developer & Software Engineer
-            </p>
-            
-            <p className="hero-description">
-              Passionate about creating elegant solutions to complex problems. 
-              Specialized in modern web technologies and scalable applications.
-            </p>
           </div>
         </div>
       </section>
