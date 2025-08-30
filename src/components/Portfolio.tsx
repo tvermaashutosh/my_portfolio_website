@@ -1,7 +1,6 @@
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CalendarDays, MapPin, ExternalLink, Github } from "lucide-react";
-import profileImage from "@/assets/profile-image.jpg";
+import React from "react";
+import "./Portfolio.css";
+import profileImage from "../assets/profile-image.jpg";
 
 const Portfolio = () => {
   const skills = [
@@ -73,31 +72,31 @@ const Portfolio = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="portfolio">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary-glow to-accent py-20">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cdefs%3E%3Cpattern%20id%3D%22grid%22%20width%3D%2220%22%20height%3D%2220%22%20patternUnits%3D%22userSpaceOnUse%22%3E%3Cpath%20d%3D%22M%2020%200%20L%200%200%200%2020%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%220.5%22%20opacity%3D%220.1%22/%3E%3C/pattern%3E%3C/defs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23grid)%22/%3E%3C/svg%3E')] opacity-20"></div>
+      <section className="hero-section">
+        <div className="hero-pattern"></div>
         
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col items-center text-center text-white">
-            <div className="relative mb-8 animate-float">
+        <div className="container">
+          <div className="hero-content">
+            <div className="profile-image-container">
               <img 
                 src={profileImage}
                 alt="Profile"
-                className="w-48 h-48 rounded-full border-4 border-white/20 shadow-glow object-cover"
+                className="profile-image"
               />
-              <div className="absolute inset-0 rounded-full bg-gradient-to-t from-primary/20 to-transparent"></div>
+              <div className="profile-overlay"></div>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
+            <h1 className="hero-title">
               Alex Johnson
             </h1>
             
-            <p className="text-xl md:text-2xl text-white/90 mb-8 animate-fade-in max-w-2xl">
+            <p className="hero-subtitle">
               Full Stack Developer & Software Engineer
             </p>
             
-            <p className="text-lg text-white/80 mb-8 animate-fade-in max-w-3xl">
+            <p className="hero-description">
               Passionate about creating elegant solutions to complex problems. 
               Specialized in modern web technologies and scalable applications.
             </p>
@@ -105,161 +104,186 @@ const Portfolio = () => {
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-16 space-y-20">
-        {/* Skills Section */}
-        <section className="animate-fade-in">
-          <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Skills & Technologies
-          </h2>
-          
-          <div className="flex flex-wrap justify-center gap-3">
-            {skills.map((skill, index) => (
-              <Badge 
-                key={skill} 
-                variant="skill"
-                className="text-sm py-2 px-4 animate-slide-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {skill}
-              </Badge>
-            ))}
-          </div>
-        </section>
+      <div className="content-container">
+        <div className="container">
+          {/* Skills Section */}
+          <section className="section">
+            <h2 className="section-title">
+              Skills & Technologies
+            </h2>
+            
+            <div className="skills-container">
+              {skills.map((skill, index) => (
+                <div 
+                  key={skill} 
+                  className="skill-badge"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  {skill}
+                </div>
+              ))}
+            </div>
+          </section>
 
-        {/* Work Experience Section */}
-        <section className="animate-fade-in">
-          <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Work Experience
-          </h2>
-          
-          <div className="space-y-6">
-            {workExperience.map((job, index) => (
-              <Card 
-                key={index} 
-                className="transition-all duration-300 hover:shadow-elegant animate-slide-in border-border/50"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <CardHeader>
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+          {/* Work Experience Section */}
+          <section className="section">
+            <h2 className="section-title">
+              Work Experience
+            </h2>
+            
+            <div className="experience-container">
+              {workExperience.map((job, index) => (
+                <div 
+                  key={index} 
+                  className="card"
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
+                  <div className="card-header">
+                    <div className="experience-header">
+                      <div>
+                        <h3 className="card-title">{job.title}</h3>
+                        <p className="card-company">
+                          {job.company}
+                        </p>
+                      </div>
+                      <div className="experience-meta">
+                        <div className="meta-item">
+                          <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                          </svg>
+                          <span>{job.period}</span>
+                        </div>
+                        <div className="meta-item">
+                          <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                          </svg>
+                          <span>{job.location}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="card-content">
+                    <p className="card-description">{job.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Education Section */}
+          <section className="section">
+            <h2 className="section-title">
+              Education
+            </h2>
+            
+            <div className="education-grid">
+              {education.map((edu, index) => (
+                <div 
+                  key={index} 
+                  className="card"
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
+                  <div className="card-header">
+                    <h3 className="card-title">{edu.degree}</h3>
+                    <p className="card-company">
+                      {edu.school}
+                    </p>
+                  </div>
+                  <div className="card-content">
+                    <div className="meta-item">
+                      <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                      </svg>
+                      <span>{edu.period}</span>
+                    </div>
+                    <div className="meta-item">
+                      <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                      </svg>
+                      <span>{edu.location}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Projects Section */}
+          <section className="section">
+            <h2 className="section-title">
+              Featured Projects
+            </h2>
+            
+            <div className="projects-grid">
+              {projects.map((project, index) => (
+                <div 
+                  key={index} 
+                  className="card project-card"
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
+                  <div className="card-header">
+                    <h3 className="card-title">{project.title}</h3>
+                    <p className="project-description">
+                      {project.description}
+                    </p>
+                  </div>
+                  <div className="card-content project-content">
                     <div>
-                      <CardTitle className="text-xl mb-2">{job.title}</CardTitle>
-                      <CardDescription className="text-lg font-medium text-primary">
-                        {job.company}
-                      </CardDescription>
-                    </div>
-                    <div className="flex flex-col md:items-end mt-2 md:mt-0">
-                      <div className="flex items-center gap-2 text-muted-foreground mb-1">
-                        <CalendarDays className="w-4 h-4" />
-                        <span>{job.period}</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-muted-foreground">
-                        <MapPin className="w-4 h-4" />
-                        <span>{job.location}</span>
+                      <div className="tech-badges">
+                        {project.technologies.map((tech) => (
+                          <span key={tech} className="tech-badge">
+                            {tech}
+                          </span>
+                        ))}
                       </div>
                     </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{job.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        {/* Education Section */}
-        <section className="animate-fade-in">
-          <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Education
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            {education.map((edu, index) => (
-              <Card 
-                key={index} 
-                className="transition-all duration-300 hover:shadow-elegant animate-slide-in border-border/50"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <CardHeader>
-                  <CardTitle className="text-xl">{edu.degree}</CardTitle>
-                  <CardDescription className="text-lg font-medium text-primary">
-                    {edu.school}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center gap-2 text-muted-foreground mb-2">
-                    <CalendarDays className="w-4 h-4" />
-                    <span>{edu.period}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <MapPin className="w-4 h-4" />
-                    <span>{edu.location}</span>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        {/* Projects Section */}
-        <section className="animate-fade-in">
-          <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Featured Projects
-          </h2>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project, index) => (
-              <Card 
-                key={index} 
-                className="transition-all duration-300 hover:shadow-elegant animate-slide-in border-border/50 h-full"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <CardHeader>
-                  <CardTitle className="text-xl mb-2">{project.title}</CardTitle>
-                  <CardDescription className="text-sm line-clamp-3">
-                    {project.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="flex-1 flex flex-col justify-between">
-                  <div className="mb-4">
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
-                        <Badge key={tech} variant="secondary" className="text-xs">
-                          {tech}
-                        </Badge>
-                      ))}
+                    
+                    <div className="project-links">
+                      <a 
+                        href={project.github} 
+                        className="project-link"
+                      >
+                        <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                        </svg>
+                        <span>Code</span>
+                      </a>
+                      <a 
+                        href={project.demo} 
+                        className="project-link"
+                      >
+                        <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                          <polyline points="15,3 21,3 21,9"/>
+                          <line x1="10" y1="14" x2="21" y2="3"/>
+                        </svg>
+                        <span>Demo</span>
+                      </a>
                     </div>
                   </div>
-                  
-                  <div className="flex gap-4">
-                    <a 
-                      href={project.github} 
-                      className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      <Github className="w-4 h-4" />
-                      <span className="text-sm">Code</span>
-                    </a>
-                    <a 
-                      href={project.demo} 
-                      className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      <span className="text-sm">Demo</span>
-                    </a>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
       </div>
 
       {/* Footer */}
-      <footer className="bg-muted py-8 mt-20">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-muted-foreground">
-            © 2024 Alex Johnson. Built with React & Tailwind CSS.
-          </p>
+      <footer className="footer">
+        <div className="container">
+          <div className="footer-content">
+            <p>
+              © 2024 Alex Johnson. Built with React & CSS.
+            </p>
+          </div>
         </div>
       </footer>
     </div>
