@@ -35,12 +35,20 @@
   align-items: center;
   text-align: center;
   color: white;
+  gap: 32px;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .profile-image-container {
   position: relative;
-  margin-bottom: 32px;
   animation: float 6s ease-in-out infinite;
+  flex-shrink: 0;
 }
 
 .profile-image {
@@ -62,14 +70,14 @@
 .hero-title {
   font-size: 3rem;
   font-weight: bold;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   animation: fade-in 0.6s ease-out;
 }
 
 .hero-subtitle {
   font-size: 1.25rem;
   color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 32px;
+  margin-bottom: 20px;
   animation: fade-in 0.6s ease-out;
   max-width: 500px;
 }
@@ -77,7 +85,6 @@
 .hero-description {
   font-size: 1.125rem;
   color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 32px;
   animation: fade-in 0.6s ease-out;
   max-width: 750px;
 }
@@ -290,6 +297,19 @@
 
 /* Responsive Design */
 @media (min-width: 768px) {
+  .hero-content {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 64px;
+  }
+  
+  .hero-text {
+    align-items: flex-start;
+    text-align: left;
+    flex: 1;
+  }
+  
   .hero-title {
     font-size: 4.5rem;
   }
