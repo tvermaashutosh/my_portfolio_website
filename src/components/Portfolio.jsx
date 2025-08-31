@@ -8,11 +8,10 @@ const Portfolio = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const skills = [
-    "JavaScript", "TypeScript", "React", "Node.js", "Python", 
-    "SQL", "Git", "AWS", "Docker", "GraphQL"
+    "Data Structures and Algorithms", "Object-Oriented Programming", "Database Management Systems", "Operating Systems", "Java", "Spring Boot", "SQL", "JavaScript", "React"
   ];
 
-  const workExperience = [
+  const experience = [
     {
       title: "Senior Software Engineer",
       company: "Tech Solutions Inc.",
@@ -38,16 +37,11 @@ const Portfolio = () => {
 
   const education = [
     {
-      degree: "Bachelor of Science in Computer Science",
-      school: "University of Technology",
-      period: "2014 - 2018",
-      location: "Boston, MA"
-    },
-    {
-      degree: "Full Stack Web Development Bootcamp",
-      school: "Code Academy",
-      period: "2018",
-      location: "Online"
+      degree: "Indian Institute of Technology (BHU), Varanasi",
+      school: "Bachelor of Technology",
+      period: "2021 - 2025",
+      location: "Varanasi",
+      additional: "(Mechanical Engineering)"
     }
   ];
 
@@ -75,7 +69,7 @@ const Portfolio = () => {
     }
   ];
 
-  const navItems = [
+  const navs = [
     { name: 'About', id: 'about' },
     { name: 'Skills', id: 'skills' },
     { name: 'Experience', id: 'experience' },
@@ -83,26 +77,49 @@ const Portfolio = () => {
     { name: 'Projects', id: 'projects' }
   ];
 
+  const NAVBAR_HEIGHT = 100;
+
   useEffect(() => {
+    // const handleScroll = () => {
+    //   setIsScrolled(window.scrollY > 50);
+
+    //   // Update active section based on scroll position
+    //   const sections = navs.map(item => ({
+    //     id: item.id,
+    //     element: document.getElementById(item.id),
+    //     offset: document.getElementById(item.id)?.offsetTop || 0
+    //   }));
+
+    //   const scrollPosition = window.scrollY + 100;
+
+    //   for (let i = sections.length - 1; i >= 0; i--) {
+    //     if (scrollPosition >= sections[i].offset) {
+    //       setActiveSection(sections[i].id);
+    //       break;
+    //     }
+    //   }
+    // };
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      
-      // Update active section based on scroll position
-      const sections = navItems.map(item => ({
-        id: item.id,
-        element: document.getElementById(item.id),
-        offset: document.getElementById(item.id)?.offsetTop || 0
-      }));
 
-      const scrollPosition = window.scrollY + 100;
-      
+      const sections = navs
+        .map(item => {
+          const el = document.getElementById(item.id);
+          return el ? { id: item.id, top: el.getBoundingClientRect().top + window.scrollY } : null;
+        })
+        .filter(Boolean);
+
+      const scrollPosition = window.scrollY + NAVBAR_HEIGHT + 1;
+
       for (let i = sections.length - 1; i >= 0; i--) {
-        if (scrollPosition >= sections[i].offset) {
+        if (scrollPosition >= sections[i].top) {
           setActiveSection(sections[i].id);
           break;
         }
       }
     };
+
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -111,11 +128,15 @@ const Portfolio = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const offsetTop = element.offsetTop - 80; // Account for navbar height
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - NAVBAR_HEIGHT; // Adjust for navbar height
+      // const offsetTop = element.offsetTop - 80; // Account for navbar height
       window.scrollTo({
-        top: offsetTop,
+        // top: offsetTop,
+        top: offsetPosition,
         behavior: 'smooth'
       });
+      setActiveSection(sectionId);
     }
     setIsMobileMenuOpen(false);
   };
@@ -131,11 +152,11 @@ const Portfolio = () => {
           }}>
             Alex Johnson
           </a>
-          
+
           <ul className={`navbar-nav ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
-            {navItems.map((item) => (
+            {navs.map((item) => (
               <li key={item.id}>
-                <a 
+                <a
                   className={`navbar-link ${activeSection === item.id ? 'active' : ''}`}
                   onClick={() => scrollToSection(item.id)}
                 >
@@ -144,8 +165,8 @@ const Portfolio = () => {
               </li>
             ))}
           </ul>
-          
-          <button 
+
+          <button
             className="mobile-menu-btn"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
@@ -157,26 +178,26 @@ const Portfolio = () => {
       {/* Hero Section */}
       <section id="about" className="hero-section">
         <div className="hero-pattern"></div>
-        
+
         <div className="container">
           <div className="hero-content">
             <div className="hero-text">
               <h1 className="hero-title">
                 Alex Johnson
               </h1>
-              
+
               <p className="hero-subtitle">
                 Full Stack Developer & Software Engineer
               </p>
-              
+
               <p className="hero-description">
-                Passionate about creating elegant solutions to complex problems. 
+                Passionate about creating elegant solutions to complex problems.
                 Specialized in modern web technologies and scalable applications.
               </p>
             </div>
-            
+
             <div className="profile-image-container">
-              <img 
+              <img
                 src={profileImage}
                 alt="Profile"
                 className="profile-image"
@@ -192,13 +213,13 @@ const Portfolio = () => {
           {/* Skills Section */}
           <section id="skills" className="section">
             <h2 className="section-title">
-              Skills & Technologies
+              Skills
             </h2>
-            
+
             <div className="skills-container">
               {skills.map((skill, index) => (
-                <div 
-                  key={skill} 
+                <div
+                  key={skill}
                   className="skill-badge"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
@@ -208,16 +229,16 @@ const Portfolio = () => {
             </div>
           </section>
 
-          {/* Work Experience Section */}
+          {/* Experience Section */}
           <section id="experience" className="section">
             <h2 className="section-title">
-              Work Experience
+              Experience
             </h2>
-            
+
             <div className="experience-container">
-              {workExperience.map((job, index) => (
-                <div 
-                  key={index} 
+              {experience.map((job, index) => (
+                <div
+                  key={index}
                   className="card"
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
@@ -232,17 +253,17 @@ const Portfolio = () => {
                       <div className="experience-meta">
                         <div className="meta-item">
                           <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                            <line x1="16" y1="2" x2="16" y2="6"/>
-                            <line x1="8" y1="2" x2="8" y2="6"/>
-                            <line x1="3" y1="10" x2="21" y2="10"/>
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                            <line x1="16" y1="2" x2="16" y2="6" />
+                            <line x1="8" y1="2" x2="8" y2="6" />
+                            <line x1="3" y1="10" x2="21" y2="10" />
                           </svg>
                           <span>{job.period}</span>
                         </div>
                         <div className="meta-item">
                           <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                            <circle cx="12" cy="10" r="3"/>
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
                           </svg>
                           <span>{job.location}</span>
                         </div>
@@ -262,11 +283,11 @@ const Portfolio = () => {
             <h2 className="section-title">
               Education
             </h2>
-            
+
             <div className="education-grid">
               {education.map((edu, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="card"
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
@@ -275,21 +296,23 @@ const Portfolio = () => {
                     <p className="card-company">
                       {edu.school}
                     </p>
+                    {edu.additional && <p className="card-company" style={{ fontSize: "small", marginTop:"2px" }}>{edu.additional}</p>}
                   </div>
+
                   <div className="card-content">
                     <div className="meta-item">
                       <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                        <line x1="16" y1="2" x2="16" y2="6"/>
-                        <line x1="8" y1="2" x2="8" y2="6"/>
-                        <line x1="3" y1="10" x2="21" y2="10"/>
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
                       </svg>
                       <span>{edu.period}</span>
                     </div>
                     <div className="meta-item">
                       <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                        <circle cx="12" cy="10" r="3"/>
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                        <circle cx="12" cy="10" r="3" />
                       </svg>
                       <span>{edu.location}</span>
                     </div>
@@ -304,11 +327,11 @@ const Portfolio = () => {
             <h2 className="section-title">
               Featured Projects
             </h2>
-            
+
             <div className="projects-grid">
               {projects.map((project, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="card project-card"
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
@@ -328,25 +351,25 @@ const Portfolio = () => {
                         ))}
                       </div>
                     </div>
-                    
+
                     <div className="project-links">
-                      <a 
-                        href={project.github} 
+                      <a
+                        href={project.github}
                         className="project-link"
                       >
                         <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
                         </svg>
                         <span>Code</span>
                       </a>
-                      <a 
-                        href={project.demo} 
+                      <a
+                        href={project.demo}
                         className="project-link"
                       >
                         <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                          <polyline points="15,3 21,3 21,9"/>
-                          <line x1="10" y1="14" x2="21" y2="3"/>
+                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                          <polyline points="15,3 21,3 21,9" />
+                          <line x1="10" y1="14" x2="21" y2="3" />
                         </svg>
                         <span>Demo</span>
                       </a>
@@ -364,7 +387,7 @@ const Portfolio = () => {
         <div className="container">
           <div className="footer-content">
             <p>
-              © 2024 Alex Johnson. Built with React & CSS.
+              Built with React
             </p>
           </div>
         </div>
