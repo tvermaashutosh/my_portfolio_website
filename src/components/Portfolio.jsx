@@ -150,7 +150,7 @@ const Portfolio = () => {
             e.preventDefault();
             scrollToSection('about');
           }}>
-            Alex Johnson
+            Ashutosh Verma
           </a>
 
           <ul className={`navbar-nav ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
@@ -183,16 +183,15 @@ const Portfolio = () => {
           <div className="hero-content">
             <div className="hero-text">
               <h1 className="hero-title">
-                Alex Johnson
+                Ashutosh Verma
               </h1>
 
-              <p className="hero-subtitle">
-                Full Stack Developer & Software Engineer
-              </p>
+              {/* <p className="hero-subtitle">
+              </p> */}
 
               <p className="hero-description">
                 Passionate about creating elegant solutions to complex problems.
-                Specialized in modern web technologies and scalable applications.
+                Specialized in modern web technologies and scalable applications. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam consectetur obcaecati magni deleniti. Asperiores ea aliquam officiis eveniet unde magnam cumque natus odio, est molestias corrupti, laudantium pariatur iusto sed tempora ullam velit similique sequi rerum corporis necessitatibus doloribus. Placeat earum qui praesentium soluta! Molestiae, voluptatem! Velit a neque pariatur!
               </p>
             </div>
 
@@ -325,7 +324,7 @@ const Portfolio = () => {
           {/* Projects Section */}
           <section id="projects" className="section">
             <h2 className="section-title">
-              Featured Projects
+              Projects
             </h2>
 
             <div className="projects-grid">
