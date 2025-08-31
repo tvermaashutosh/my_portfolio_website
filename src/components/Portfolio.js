@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Portfolio.css";
 import profileImage from "../assets/profile-image.jpg";
 
 const Portfolio = () => {
+  const [activeSection, setActiveSection] = useState('about');
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const skills = [
     "JavaScript", "TypeScript", "React", "Node.js", "Python", 
     "SQL", "Git", "AWS", "Docker", "GraphQL"
@@ -71,10 +75,87 @@ const Portfolio = () => {
     }
   ];
 
+  const navItems = [
+    { name: 'About', id: 'about' },
+    { name: 'Skills', id: 'skills' },
+    { name: 'Experience', id: 'experience' },
+    { name: 'Education', id: 'education' },
+    { name: 'Projects', id: 'projects' }
+  ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+      
+      // Update active section based on scroll position
+      const sections = navItems.map(item => ({
+        id: item.id,
+        element: document.getElementById(item.id),
+        offset: document.getElementById(item.id)?.offsetTop || 0
+      }));
+
+      const scrollPosition = window.scrollY + 100;
+      
+      for (let i = sections.length - 1; i >= 0; i--) {
+        if (scrollPosition >= sections[i].offset) {
+          setActiveSection(sections[i].id);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offsetTop = element.offsetTop - 80; // Account for navbar height
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <div className="portfolio">
+      {/* Navbar */}
+      <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+        <div className="navbar-container">
+          <a href="#about" className="navbar-brand" onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('about');
+          }}>
+            Alex Johnson
+          </a>
+          
+          <ul className={`navbar-nav ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <a 
+                  className={`navbar-link ${activeSection === item.id ? 'active' : ''}`}
+                  onClick={() => scrollToSection(item.id)}
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+          
+          <button 
+            className="mobile-menu-btn"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            ☰
+          </button>
+        </div>
+      </nav>
+
       {/* Hero Section */}
-      <section className="hero-section">
+      <section id="about" className="hero-section">
         <div className="hero-pattern"></div>
         
         <div className="container">
@@ -109,7 +190,7 @@ const Portfolio = () => {
       <div className="content-container">
         <div className="container">
           {/* Skills Section */}
-          <section className="section">
+          <section id="skills" className="section">
             <h2 className="section-title">
               Skills & Technologies
             </h2>
@@ -128,7 +209,7 @@ const Portfolio = () => {
           </section>
 
           {/* Work Experience Section */}
-          <section className="section">
+          <section id="experience" className="section">
             <h2 className="section-title">
               Work Experience
             </h2>
@@ -177,7 +258,7 @@ const Portfolio = () => {
           </section>
 
           {/* Education Section */}
-          <section className="section">
+          <section id="education" className="section">
             <h2 className="section-title">
               Education
             </h2>
@@ -219,7 +300,7 @@ const Portfolio = () => {
           </section>
 
           {/* Projects Section */}
-          <section className="section">
+          <section id="projects" className="section">
             <h2 className="section-title">
               Featured Projects
             </h2>
