@@ -199,7 +199,7 @@
 
 .contact-links {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   gap: 12px;
   animation: fade-in 0.6s ease-out;
 }
@@ -265,7 +265,7 @@
   font-weight: 600;
   padding: 8px 16px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  animation: slide-in 3s ease-out infinite;
+  animation: slide-in 5s ease-out infinite;
 }
 
 .skill-badge:hover {
@@ -287,6 +287,7 @@
 
 .card-header {
   padding: 24px 24px 0 24px;
+  margin-top: -8px;
 }
 
 .card-content {
@@ -369,6 +370,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  margin-top: -18px;
 }
 
 .project-description {
@@ -450,7 +452,7 @@
 
   .hero-title {
     font-size: 3rem;
-    margin-top: -20px;
+    margin-top: -26px;
     margin-bottom: 0;
   }
 
