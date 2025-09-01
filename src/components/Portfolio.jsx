@@ -38,8 +38,8 @@ const Portfolio = () => {
 
   const education = [
     {
-      degree: "Indian Institute of Technology (BHU), Varanasi",
-      school: "Bachelor of Technology",
+      degree: "Bachelor of Technology",
+      school: "Indian Institute of Technology (BHU) Varanasi",
       period: "2021 - 2025",
       location: "Varanasi",
       additional: "(Mechanical Engineering)"
@@ -70,9 +70,9 @@ const Portfolio = () => {
     },
     {
       title: "GeeksforGeeks",
-      rating: 1989,
+      rating: 1963,
       label: "4 ⭐",
-      questions: "250+",
+      questions: "150+",
       contests: "10+"
     }
   ];
@@ -308,31 +308,34 @@ const Portfolio = () => {
                   className="card"
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
-                  <div className="card-header">
-                    <h3 className="card-title">{edu.degree}</h3>
-                    <p className="card-company">
-                      {edu.school}
-                    </p>
+                  <div className="card-header" style={{ marginBottom: "22px" }}>
+                    <div className="experience-header">
+                      <div>
+                        <h3 className="card-title">{edu.school}</h3>
+                        <p className="card-company">
+                          {edu.degree}
+                        </p>
+                      </div>
+                      <div className="experience-meta">
+                        <div className="meta-item">
+                          <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                            <line x1="16" y1="2" x2="16" y2="6" />
+                            <line x1="8" y1="2" x2="8" y2="6" />
+                            <line x1="3" y1="10" x2="21" y2="10" />
+                          </svg>
+                          <span>{edu.period}</span>
+                        </div>
+                        <div className="meta-item">
+                          <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                          </svg>
+                          <span>{edu.location}</span>
+                        </div>
+                      </div>
+                    </div>
                     {edu.additional && <p className="card-company" style={{ fontSize: "small", marginTop: "2px" }}>{edu.additional}</p>}
-                  </div>
-
-                  <div className="card-content">
-                    <div className="meta-item">
-                      <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                        <line x1="16" y1="2" x2="16" y2="6" />
-                        <line x1="8" y1="2" x2="8" y2="6" />
-                        <line x1="3" y1="10" x2="21" y2="10" />
-                      </svg>
-                      <span>{edu.period}</span>
-                    </div>
-                    <div className="meta-item">
-                      <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                        <circle cx="12" cy="10" r="3" />
-                      </svg>
-                      <span>{edu.location}</span>
-                    </div>
                   </div>
                 </div>
               ))}
