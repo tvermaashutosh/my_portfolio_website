@@ -156,7 +156,7 @@ const Portfolio = () => {
       {/* Navbar */}
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="navbar-container">
-          <a href="#about" className="navbar-brand" onClick={(e) => {
+          <a href="" className="navbar-brand" onClick={(e) => {
             e.preventDefault();
             scrollToSection('about');
           }}>
@@ -197,8 +197,7 @@ const Portfolio = () => {
               </h1>
 
               <p className="hero-description">
-                passionate about creating elegant solutions to complex problems.
-                Specialized in modern web technologies and scalable applications. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam consectetur obcaecati magni deleniti. Asperiores ea aliquam officiis eveniet unde magnam cumque natus odio, est molestias corrupti, laudantium pariatur iusto sed tempora ullam velit similique sequi rerum corporis necessitatibus doloribus. Placeat earum qui praesentium soluta! Molestiae, voluptatem! Velit a neque pariatur!
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic ducimus, totam esse placeat aspernatur accusantium, quae omnis facilis aliquid cum maiores illo illum fuga temporibus consequuntur! Quos et quidem fugiat at, eius consequuntur. Maiores, omnis non facilis sunt quo nobis optio eveniet molestiae iure magni amet quaerat adipisci quis illum repudiandae? Earum beatae quos temporibus! Eos nobis, distinctio eveniet provident fugit quae dicta molestiae quod aut maiores excepturi. Aut labore sed animi. Repudiandae quibusdam inventore quo qui ad quidem sit, sunt possimus animi a voluptate non! Aspernatur magnam soluta distinctio inventore fugiat quas veritatis. Impedit odio nulla incidunt eaque magni?
               </p>
 
               <div className="contact-links">
@@ -268,7 +267,7 @@ const Portfolio = () => {
                         </p>
                       </div>
                       <div className="experience-meta">
-                        <div className="meta-item">
+                        <div className="meta-item" style={{ marginRight: "4px" }}>
                           <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
                             <line x1="16" y1="2" x2="16" y2="6" />
@@ -308,7 +307,7 @@ const Portfolio = () => {
                   className="card"
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
-                  <div className="card-header" style={{ marginBottom: "22px" }}>
+                  <div className="card-header" style={{ marginBottom: "21px" }}>
                     <div className="experience-header">
                       <div>
                         <h3 className="card-title">{edu.school}</h3>
@@ -317,7 +316,7 @@ const Portfolio = () => {
                         </p>
                       </div>
                       <div className="experience-meta">
-                        <div className="meta-item">
+                        <div className="meta-item" style={{ marginRight: "4px" }}>
                           <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
                             <line x1="16" y1="2" x2="16" y2="6" />
