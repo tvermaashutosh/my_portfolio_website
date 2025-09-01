@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Mail, Linkedin } from "lucide-react";
 import "./Portfolio.css";
@@ -47,6 +46,37 @@ const Portfolio = () => {
     }
   ];
 
+  const achievements = [
+    {
+      title: "LeetCode",
+      rating: 1980,
+      label: "Knight",
+      questions: "650+",
+      contests: "80+"
+    },
+    {
+      title: "Codeforces",
+      rating: 1410,
+      label: "Specialist",
+      questions: "250+",
+      contests: "50+"
+    },
+    {
+      title: "CodeChef",
+      rating: 1669,
+      label: "3 ⭐",
+      questions: "250+",
+      contests: "50+"
+    },
+    {
+      title: "GeeksforGeeks",
+      rating: 1989,
+      label: "4 ⭐",
+      questions: "250+",
+      contests: "10+"
+    }
+  ];
+
   const projects = [
     {
       title: "E-Commerce Platform",
@@ -76,32 +106,13 @@ const Portfolio = () => {
     { name: 'Skills', id: 'skills' },
     { name: 'Experience', id: 'experience' },
     { name: 'Education', id: 'education' },
+    { name: 'Achievements', id: 'achievements' },
     { name: 'Projects', id: 'projects' }
   ];
 
   const NAVBAR_HEIGHT = 100;
 
   useEffect(() => {
-    // const handleScroll = () => {
-    //   setIsScrolled(window.scrollY > 50);
-
-    //   // Update active section based on scroll position
-    //   const sections = navs.map(item => ({
-    //     id: item.id,
-    //     element: document.getElementById(item.id),
-    //     offset: document.getElementById(item.id)?.offsetTop || 0
-    //   }));
-
-    //   const scrollPosition = window.scrollY + 100;
-
-    //   for (let i = sections.length - 1; i >= 0; i--) {
-    //     if (scrollPosition >= sections[i].offset) {
-    //       setActiveSection(sections[i].id);
-    //       break;
-    //     }
-    //   }
-    // };
-
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
@@ -122,7 +133,6 @@ const Portfolio = () => {
       }
     };
 
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -131,10 +141,8 @@ const Portfolio = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-      const offsetPosition = elementPosition - NAVBAR_HEIGHT; // Adjust for navbar height
-      // const offsetTop = element.offsetTop - 80; // Account for navbar height
+      const offsetPosition = elementPosition - NAVBAR_HEIGHT;
       window.scrollTo({
-        // top: offsetTop,
         top: offsetPosition,
         behavior: 'smooth'
       });
@@ -194,11 +202,11 @@ const Portfolio = () => {
               </p>
 
               <div className="contact-links">
-                <a href="mailto:ashutosh@example.com" className="contact-link">
+                <a href="mailto:ashutoshv191@gmail.com" className="contact-link">
                   <Mail size={20} />
-                  <span>ashutosh@example.com</span>
+                  <span>Email</span>
                 </a>
-                <a href="https://linkedin.com/in/ashutoshverma" target="_blank" rel="noopener noreferrer" className="contact-link">
+                <a href="https://linkedin.com/in/-ashutosh-verma" target="_blank" rel="noopener noreferrer" className="contact-link">
                   <Linkedin size={20} />
                   <span>LinkedIn</span>
                 </a>
@@ -305,7 +313,7 @@ const Portfolio = () => {
                     <p className="card-company">
                       {edu.school}
                     </p>
-                    {edu.additional && <p className="card-company" style={{ fontSize: "small", marginTop:"2px" }}>{edu.additional}</p>}
+                    {edu.additional && <p className="card-company" style={{ fontSize: "small", marginTop: "2px" }}>{edu.additional}</p>}
                   </div>
 
                   <div className="card-content">
@@ -324,6 +332,35 @@ const Portfolio = () => {
                         <circle cx="12" cy="10" r="3" />
                       </svg>
                       <span>{edu.location}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Achievements Section */}
+          <section id="achievements" className="section">
+            <h2 className="section-title">
+              Achievements
+            </h2>
+
+            <div className="projects-grid">
+              {achievements.map((achievement, index) => (
+                <div
+                  key={index}
+                  className="card project-card"
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
+                  <div className="card-header">
+                    <h3 className="card-title">{achievement.title}</h3>
+                  </div>
+                  <div className="card-content project-content" style={{ marginBottom: "-13px" }}>
+                    <div className="tech-badges">
+                      <span className="tech-badge">{achievement.rating}</span>
+                      <span className="tech-badge">{achievement.label}</span>
+                      <span className="tech-badge">{achievement.questions} problems</span>
+                      <span className="tech-badge">{achievement.contests} contests</span>
                     </div>
                   </div>
                 </div>
@@ -394,10 +431,17 @@ const Portfolio = () => {
       {/* Footer */}
       <footer className="footer">
         <div className="container">
-          <div className="footer-content">
-            <p>
-              Built with React
-            </p>
+          <div className="footer-content" style={{ display: "flex", justifyContent: "center" }}>
+            <div className="contact-links">
+              <a href="mailto:ashutoshv191@gmail.com" className="contact-link footer-content">
+                <Mail size={20} />
+                <span>Email</span>
+              </a>
+              <a href="https://linkedin.com/in/-ashutosh-verma" target="_blank" rel="noopener noreferrer" className="contact-link footer-content">
+                <Linkedin size={20} />
+                <span>LinkedIn</span>
+              </a>
+            </div>
           </div>
         </div>
       </footer>
