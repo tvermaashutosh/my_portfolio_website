@@ -1,4 +1,6 @@
+
 import React, { useState, useEffect } from "react";
+import { Mail, Linkedin } from "lucide-react";
 import "./Portfolio.css";
 import profileImage from "../assets/profile-image.jpg";
 
@@ -186,13 +188,21 @@ const Portfolio = () => {
                 Ashutosh Verma
               </h1>
 
-              {/* <p className="hero-subtitle">
-              </p> */}
-
               <p className="hero-description">
-                Passionate about creating elegant solutions to complex problems.
+                passionate about creating elegant solutions to complex problems.
                 Specialized in modern web technologies and scalable applications. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam consectetur obcaecati magni deleniti. Asperiores ea aliquam officiis eveniet unde magnam cumque natus odio, est molestias corrupti, laudantium pariatur iusto sed tempora ullam velit similique sequi rerum corporis necessitatibus doloribus. Placeat earum qui praesentium soluta! Molestiae, voluptatem! Velit a neque pariatur!
               </p>
+
+              <div className="contact-links">
+                <a href="mailto:ashutosh@example.com" className="contact-link">
+                  <Mail size={20} />
+                  <span>ashutosh@example.com</span>
+                </a>
+                <a href="https://linkedin.com/in/ashutoshverma" target="_blank" rel="noopener noreferrer" className="contact-link">
+                  <Linkedin size={20} />
+                  <span>LinkedIn</span>
+                </a>
+              </div>
             </div>
 
             <div className="profile-image-container">
