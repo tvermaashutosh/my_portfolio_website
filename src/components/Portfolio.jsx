@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Mail, Linkedin } from "lucide-react";
 import "./Portfolio.css";
-import profileImage from "../assets/profile-image.jpg";
+import profileImage from "../assets/profile-image.png";
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('about');
