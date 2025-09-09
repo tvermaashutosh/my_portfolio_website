@@ -1,14 +1,16 @@
 /* Navbar Styles */
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
   z-index: 1000;
   transition: all 0.3s ease;
+  padding: 8px 24px;
 }
 
 .navbar.scrolled {
@@ -17,33 +19,19 @@
 }
 
 .navbar-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  height: 64px;
+  height: 48px;
 }
 
-.navbar-brand {
-  font-size: 1.5rem;
-  font-weight: bold;
-  background: linear-gradient(135deg, #3b82f6, #06b6d4);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: #3b82f6;
-  /* Fallback for non-webkit browsers */
-  text-decoration: none;
-}
 
 .navbar-nav {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 32px;
+  gap: 24px;
 }
 
 .navbar-nav li {
@@ -80,6 +68,15 @@
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    top: 10px;
+    padding: 6px 16px;
+  }
+  
+  .navbar-container {
+    height: 40px;
+  }
+  
   .navbar-nav {
     display: none;
     position: absolute;
@@ -91,6 +88,8 @@
     padding: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     gap: 16px;
+    border-radius: 16px;
+    margin-top: 8px;
   }
 
   .navbar-nav.mobile-open {
