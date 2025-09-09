@@ -110,7 +110,7 @@ const Portfolio = () => {
     { name: 'Projects', id: 'projects' }
   ];
 
-  const NAVBAR_HEIGHT = 100;
+  const NAVBAR_HEIGHT = 115;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -123,7 +123,7 @@ const Portfolio = () => {
         })
         .filter(Boolean);
 
-      const scrollPosition = window.scrollY + NAVBAR_HEIGHT + 1;
+      const scrollPosition = window.scrollY + NAVBAR_HEIGHT + 2;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         if (scrollPosition >= sections[i].top) {
@@ -197,7 +197,7 @@ const Portfolio = () => {
               </h1>
 
               <p className="hero-description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic ducimus, totam esse placeat aspernatur accusantium, quae omnis facilis aliquid cum maiores illo illum fuga temporibus consequuntur! Quos et quidem fugiat at, eius consequuntur. Maiores, omnis non facilis sunt quo nobis optio eveniet molestiae iure magni amet quaerat adipisci quis illum repudiandae? Earum beatae quos temporibus! Eos nobis, distinctio eveniet provident fugit quae dicta molestiae quod aut maiores excepturi. Aut labore sed animi. Repudiandae quibusdam inventore quo qui ad quidem sit, sunt possimus animi a voluptate non! Aspernatur magnam soluta distinctio inventore fugiat quas veritatis. Impedit odio nulla incidunt eaque magni?
+                B.Tech graduate from IIT BHU with a strong foundation in Problem-Solving, having practiced 1300+ problems, and with a command of Computer Science Fundamentals — enthusiastic about Full-Stack Development and Open-Source.
               </p>
 
               <div className="contact-links">
