@@ -156,13 +156,6 @@ const Portfolio = () => {
       {/* Navbar */}
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="navbar-container">
-          <a href="" className="navbar-brand" onClick={(e) => {
-            e.preventDefault();
-            scrollToSection('about');
-          }}>
-            Ashutosh Verma
-          </a>
-
           <ul className={`navbar-nav ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
             {navs.map((item) => (
               <li key={item.id}>
