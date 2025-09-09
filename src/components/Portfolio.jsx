@@ -110,7 +110,7 @@ const Portfolio = () => {
     { name: 'Projects', id: 'projects' }
   ];
 
-  const NAVBAR_HEIGHT = 115;
+  const NAVBAR_HEIGHT = 136;
 
   useEffect(() => {
     const handleScroll = () => {
