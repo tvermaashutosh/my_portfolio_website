@@ -10,7 +10,7 @@
   border-radius: 20px;
   z-index: 1000;
   transition: all 0.3s ease;
-  padding: 8px 13.5px;
+  padding: 8px 14px;
 }
 
 .navbar.scrolled {
