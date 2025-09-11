@@ -350,7 +350,7 @@ const Portfolio = () => {
                   <div className="card-header">
                     <h3 className="card-title">{achievement.title}</h3>
                   </div>
-                  <div className="card-content project-content" style={{ marginBottom: "-13px" }}>
+                  <div className="card-content project-content" style={{ marginBottom: "-14px" }}>
                     <div className="tech-badges">
                       <span className="tech-badge">{achievement.rating}</span>
                       <span className="tech-badge">{achievement.label}</span>
