@@ -79,25 +79,25 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution built with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard.",
-      technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
-      github: "#",
+      title: "Hospital Management System",
+      description: [
+        "Built a scalable application covering 5 entities: patients, doctors, appointments, departments, and insurances.",
+        "Programmed RESTful APIs providing CRUD operations along with enforced entity relationships, database constraints, and input validation.",
+        "Utilized JSON Web Tokens for authentication and enabled role-based authorization for 3 user roles."
+      ],
+      technologies: ["Spring Boot", "Spring MVC", "Spring Data JPA", "Spring Security"],
+      github: "https://github.com/tvermaashutosh/springBoot_hospitalApplication",
       demo: "#"
     },
     {
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates using Socket.io. Includes project boards, team collaboration, and deadline tracking.",
-      technologies: ["Vue.js", "Express", "MongoDB", "Socket.io"],
+      title: "News Torrent",
+      description: [
+        "Created a real-time news and searchable articles online service leveraging The New York Times as its source.",
+        "Delivered up-to-date news coverage as Top Stories across 26 distinct sections and served Article Search functionality through user-provided search props."
+      ],
+      technologies: ["React"],
       github: "#",
-      demo: "#"
-    },
-    {
-      title: "Weather Analytics Dashboard",
-      description: "Data visualization dashboard that displays weather patterns and analytics using Chart.js and a third-party weather API.",
-      technologies: ["React", "Chart.js", "Weather API", "Tailwind CSS"],
-      github: "#",
-      demo: "#"
+      demo: "https://news-torrent.vercel.app"
     }
   ];
 
@@ -379,7 +379,11 @@ const Portfolio = () => {
                   <div className="card-header">
                     <h3 className="card-title">{project.title}</h3>
                     <p className="project-description">
-                      {project.description}
+                      <ul>
+                        {project.description.map((point, idx) => (
+                          <li key={idx} className="project-description" style={{ marginLeft: "12px" }}>{point}</li>
+                        ))}
+                      </ul>
                     </p>
                   </div>
                   <div className="card-content project-content">
@@ -393,7 +397,7 @@ const Portfolio = () => {
                       </div>
                     </div>
 
-                    <div className="project-links">
+                    <div className="project-links" style={{ marginBottom: "-3px" }}>
                       <a
                         href={project.github}
                         className="project-link"
