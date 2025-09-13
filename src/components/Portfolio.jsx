@@ -14,25 +14,20 @@ const Portfolio = () => {
 
   const experience = [
     {
-      title: "Senior Software Engineer",
-      company: "Tech Solutions Inc.",
-      period: "2022 - Present",
-      location: "San Francisco, CA",
-      description: "Lead development of scalable web applications using React and Node.js. Managed a team of 4 developers and implemented CI/CD pipelines."
+      title: "Development Engineer (Probation)",
+      company: "Magic Workshop",
+      period: "July 2025 - Present",
+      location: "Indore, Madhya Pradesh",
+      description: []
     },
     {
-      title: "Full Stack Developer",
-      company: "Digital Innovations Ltd.",
-      period: "2020 - 2022",
-      location: "New York, NY",
-      description: "Developed and maintained multiple client projects using modern web technologies. Collaborated with design teams to create user-friendly interfaces."
-    },
-    {
-      title: "Junior Developer",
-      company: "StartupXYZ",
-      period: "2018 - 2020",
-      location: "Austin, TX",
-      description: "Built responsive web applications and REST APIs. Participated in agile development processes and code reviews."
+      title: "Open-Source Contributor",
+      company: "Google Summer of Code",
+      period: "May 2024 - September 2024",
+      location: "Remote",
+      description: [
+        ""
+      ]
     }
   ];
 
@@ -279,8 +274,12 @@ const Portfolio = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="card-content">
-                    <p className="card-description">{job.description}</p>
+                  <div className="card-content" style={{ marginBottom: `${job.description.length === 0 ? "-35px" : "-5px"}` }}>
+                    <p className="card-description">
+                      {job.description.map((point, idx) => (
+                        <li key={idx} className="card-description" style={{ marginLeft: "12px" }}>{point}</li>
+                      ))}
+                    </p>
                   </div>
                 </div>
               ))}
