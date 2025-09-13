@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "ash-portfolio",
+    "site": "ashutoshverma",
     "public": "dist",
     "ignore": [
       "firebase.json",
