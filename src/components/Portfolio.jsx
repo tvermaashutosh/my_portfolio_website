@@ -176,6 +176,7 @@ const Portfolio = () => {
       {/* Hero Section */}
       <section id="about" className="hero-section">
         <div className="hero-pattern"></div>
+        <div className="hero-gradient"></div>
 
         <div className="container">
           <div className="hero-content">
@@ -248,11 +249,14 @@ const Portfolio = () => {
                 >
                   <div className="card-header">
                     <div className="experience-header">
-                      <div>
-                        <h3 className="card-title">{job.title}</h3>
-                        <p className="card-company">
-                          {job.company}
-                        </p>
+                      <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
+                        <img src="https://placehold.co/48x48" alt={job.company} className="company-logo" />
+                        <div>
+                          <h3 className="card-title">{job.title}</h3>
+                          <p className="card-company">
+                            {job.company}
+                          </p>
+                        </div>
                       </div>
                       <div className="experience-meta">
                         <div className="meta-item" style={{ marginRight: "4px" }}>
@@ -301,11 +305,14 @@ const Portfolio = () => {
                 >
                   <div className="card-header" style={{ marginBottom: "21px" }}>
                     <div className="experience-header">
-                      <div>
-                        <h3 className="card-title">{edu.school}</h3>
-                        <p className="card-company">
-                          {edu.degree}
-                        </p>
+                      <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
+                        <img src="https://placehold.co/48x48" alt={edu.school} className="company-logo" />
+                        <div>
+                          <h3 className="card-title">{edu.school}</h3>
+                          <p className="card-company">
+                            {edu.degree}
+                          </p>
+                        </div>
                       </div>
                       <div className="experience-meta">
                         <div className="meta-item" style={{ marginRight: "4px" }}>
@@ -346,7 +353,8 @@ const Portfolio = () => {
                   className="card project-card"
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
-                  <div className="card-header">
+                  <div className="card-header" style={{ display: "flex", gap: "16px", alignItems: "center" }}>
+                    <img src="https://placehold.co/48x48" alt={achievement.title} className="company-logo" />
                     <h3 className="card-title">{achievement.title}</h3>
                   </div>
                   <div className="card-content project-content" style={{ marginBottom: "-14px" }}>
@@ -375,6 +383,7 @@ const Portfolio = () => {
                   className="card project-card"
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
+                  <img src="https://placehold.co/400x200" alt={project.title} className="project-image" />
                   <div className="card-header">
                     <h3 className="card-title">{project.title}</h3>
                     <p className="project-description">
