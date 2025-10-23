@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "ashutoshverma",
+    "site": "ashutoshv",
     "public": "dist",
     "ignore": [
       "firebase.json",
