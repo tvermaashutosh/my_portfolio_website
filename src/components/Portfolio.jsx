@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Mail, Linkedin, Github } from "lucide-react";
+import { Linkedin, Github } from "lucide-react";
 import "./Portfolio.css";
 import profileImage from "../assets/profile-image.png";
 import scImage from "../assets/sc.png";
@@ -49,7 +49,7 @@ const Portfolio = () => {
   const education = [
     {
       degree: "Bachelor of Technology",
-      school: "Indian Institute of Technology (BHU) Varanasi",
+      school: "Indian Institute of Technology (BHU), Varanasi",
       period: "2021 - 2025",
       location: "Varanasi",
       additional: "(Mechanical Engineering)",
