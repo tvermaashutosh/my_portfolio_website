@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Mail, Linkedin } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
 import "./Portfolio.css";
 import profileImage from "../assets/profile-image.png";
 import scImage from "../assets/sc.png";
@@ -206,10 +206,6 @@ const Portfolio = () => {
               </p>
 
               <div className="contact-links">
-                <a href="mailto:ashutoshv191@gmail.com" className="contact-link">
-                  <Mail size={20} />
-                  <span>Email</span>
-                </a>
                 <a href="https://linkedin.com/in/-ashutosh-verma" target="_blank" rel="noopener noreferrer" className="contact-link">
                   <Linkedin size={20} />
                   <span>LinkedIn</span>
@@ -456,13 +452,9 @@ const Portfolio = () => {
         <div className="container">
           <div className="footer-content" style={{ display: "flex", justifyContent: "center" }}>
             <div className="contact-links">
-              <a href="mailto:ashutoshv191@gmail.com" className="contact-link footer-content">
-                <Mail size={20} />
-                <span>Email</span>
-              </a>
-              <a href="https://linkedin.com/in/-ashutosh-verma" target="_blank" rel="noopener noreferrer" className="contact-link footer-content">
-                <Linkedin size={20} />
-                <span>LinkedIn</span>
+              <a href="https://github.com/tvermaashutosh" target="_blank" rel="noopener noreferrer" className="contact-link footer-content">
+                <Github size={20} />
+                <span>GitHub</span>
               </a>
             </div>
           </div>
