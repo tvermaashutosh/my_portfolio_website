@@ -2,23 +2,37 @@ import React, { useState, useEffect } from "react";
 import { Mail, Linkedin } from "lucide-react";
 import "./Portfolio.css";
 import profileImage from "../assets/profile-image.png";
+import scImage from "../assets/sc.png";
+import gsImage from "../assets/gs.png";
+import iitImage from "../assets/iit.png";
 
 const Portfolio = () => {
-  const [activeSection, setActiveSection] = useState('about');
+  const [activeSection, setActiveSection] = useState("about");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const skills = [
-    "Data Structures and Algorithms", "Object-Oriented Programming", "Database Management Systems", "Operating Systems", "Java", "Spring Boot", "SQL", "JavaScript", "React"
+    "Data Structures and Algorithms",
+    "Object-Oriented Programming",
+    "Database Management Systems",
+    "Operating Systems",
+    "Spring Boot",
+    "Java",
+    "SQL",
+    "JavaScript",
+    "React"
   ];
 
   const experience = [
     {
-      title: "Development Engineer (Probation)",
-      company: "Magic Workshop",
-      period: "July 2025 - Present",
-      location: "Indore, Madhya Pradesh",
-      description: []
+      title: "Software Engineer-I",
+      company: "SalesCode",
+      period: "September 2025 - Present",
+      location: "Gurugram",
+      description: [
+
+      ],
+      image: scImage
     },
     {
       title: "Open-Source Contributor",
@@ -26,8 +40,9 @@ const Portfolio = () => {
       period: "May 2024 - September 2024",
       location: "Remote",
       description: [
-        ""
-      ]
+
+      ],
+      image: gsImage
     }
   ];
 
@@ -37,7 +52,8 @@ const Portfolio = () => {
       school: "Indian Institute of Technology (BHU) Varanasi",
       period: "2021 - 2025",
       location: "Varanasi",
-      additional: "(Mechanical Engineering)"
+      additional: "(Mechanical Engineering)",
+      image: iitImage
     }
   ];
 
@@ -97,12 +113,12 @@ const Portfolio = () => {
   ];
 
   const navs = [
-    { name: 'About', id: 'about' },
-    { name: 'Skills', id: 'skills' },
-    { name: 'Experience', id: 'experience' },
-    { name: 'Education', id: 'education' },
-    { name: 'Achievements', id: 'achievements' },
-    { name: 'Projects', id: 'projects' }
+    { name: "About", id: "about" },
+    { name: "Skills", id: "skills" },
+    { name: "Experience", id: "experience" },
+    { name: "Education", id: "education" },
+    { name: "Achievements", id: "achievements" },
+    { name: "Projects", id: "projects" }
   ];
 
   const NAVBAR_HEIGHT = 136;
@@ -128,8 +144,8 @@ const Portfolio = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (sectionId) => {
@@ -139,7 +155,7 @@ const Portfolio = () => {
       const offsetPosition = elementPosition - NAVBAR_HEIGHT;
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
+        behavior: "smooth"
       });
       setActiveSection(sectionId);
     }
@@ -149,13 +165,13 @@ const Portfolio = () => {
   return (
     <div className="portfolio">
       {/* Navbar */}
-      <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+      <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
         <div className="navbar-container">
-          <ul className={`navbar-nav ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
+          <ul className={`navbar-nav ${isMobileMenuOpen ? "mobile-open" : ""}`}>
             {navs.map((item) => (
               <li key={item.id}>
                 <a
-                  className={`navbar-link ${activeSection === item.id ? 'active' : ''}`}
+                  className={`navbar-link ${activeSection === item.id ? "active" : ""}`}
                   onClick={() => scrollToSection(item.id)}
                 >
                   {item.name}
@@ -250,7 +266,7 @@ const Portfolio = () => {
                   <div className="card-header">
                     <div className="experience-header">
                       <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
-                        <img src="https://placehold.co/48x48" alt={job.company} className="company-logo" />
+                        <img src={job.image} alt={job.company} className="company-logo" />
                         <div>
                           <h3 className="card-title">{job.title}</h3>
                           <p className="card-company">
@@ -259,7 +275,7 @@ const Portfolio = () => {
                         </div>
                       </div>
                       <div className="experience-meta">
-                        <div className="meta-item" style={{ marginRight: "4px" }}>
+                        <div className="meta-item" style={{ marginRight: "5px" }}>
                           <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
                             <line x1="16" y1="2" x2="16" y2="6" />
@@ -306,7 +322,7 @@ const Portfolio = () => {
                   <div className="card-header" style={{ marginBottom: "21px" }}>
                     <div className="experience-header">
                       <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
-                        <img src="https://placehold.co/48x48" alt={edu.school} className="company-logo" />
+                        <img src={edu.image} alt={edu.school} className="company-logo" />
                         <div>
                           <h3 className="card-title">{edu.school}</h3>
                           <p className="card-company">
@@ -315,7 +331,7 @@ const Portfolio = () => {
                         </div>
                       </div>
                       <div className="experience-meta">
-                        <div className="meta-item" style={{ marginRight: "4px" }}>
+                        <div className="meta-item" style={{ marginRight: "5px" }}>
                           <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
                             <line x1="16" y1="2" x2="16" y2="6" />
@@ -333,7 +349,7 @@ const Portfolio = () => {
                         </div>
                       </div>
                     </div>
-                    {edu.additional && <p className="card-company" style={{ fontSize: "small", marginTop: "2px" }}>{edu.additional}</p>}
+                    {edu.additional && <p className="card-company" style={{ fontSize: "small", marginTop: "-3px", marginLeft: "64px" }}>{edu.additional}</p>}
                   </div>
                 </div>
               ))}
