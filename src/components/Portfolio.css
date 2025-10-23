@@ -193,7 +193,7 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: linear-gradient(to top, rgba(59, 130, 246, 0.2), transparent);
+  /* background: linear-gradient(to top, rgba(59, 130, 246, 0.2), transparent); */
 }
 
 .hero-title {
