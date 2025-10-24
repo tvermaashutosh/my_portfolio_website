@@ -32,6 +32,7 @@ const Portfolio = () => {
       description: [
 
       ],
+      technologies: [],
       image: scImage
     },
     {
@@ -42,6 +43,7 @@ const Portfolio = () => {
       description: [
 
       ],
+      technologies: [],
       image: gsImage
     }
   ];
@@ -290,12 +292,21 @@ const Portfolio = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="card-content" style={{ marginBottom: `${job.description.length === 0 ? "-35px" : "-5px"}` }}>
+                  <div className="card-content" style={{ marginBottom: `${job.description.length === 0 && job.technologies.length === 0 ? "-35px" : "-5px"}` }}>
                     <p className="card-description">
                       {job.description.map((point, idx) => (
                         <li key={idx} className="card-description" style={{ marginLeft: "12px" }}>{point}</li>
                       ))}
                     </p>
+                    {job.technologies && job.technologies.length > 0 && (
+                      <div className="tech-badges" style={{ marginTop: "12px" }}>
+                        {job.technologies.map((tech) => (
+                          <span key={tech} className="tech-badge">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
