@@ -32,7 +32,7 @@ const Portfolio = () => {
       description: [
 
       ],
-      technologies: [],
+      technologies: ["Java", "Spring Boot", "PostgreSQL", "React", "Docker"],
       image: scImage
     },
     {
@@ -43,7 +43,7 @@ const Portfolio = () => {
       description: [
 
       ],
-      technologies: [],
+      technologies: ["Python", "JavaScript", "Git", "Linux", "API Development"],
       image: gsImage
     }
   ];
