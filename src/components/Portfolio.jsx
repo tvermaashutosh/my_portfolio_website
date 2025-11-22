@@ -5,9 +5,13 @@ import profileImage from "../assets/profile-image.png";
 import scImage from "../assets/sc.png";
 import gsImage from "../assets/gs.png";
 import iitImage from "../assets/iit.png";
+import lcImage from "../assets/lcImage.png";
+import cfImage from "../assets/cfImage.png";
+import ccImage from "../assets/ccImage.png";
+import gfgImage from "../assets/gfgImage.png";
 
 const Portfolio = () => {
-  const [activeSection, setActiveSection] = useState("about");
+  const [activeSection, setActiveSection] = useState("profile");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -20,7 +24,7 @@ const Portfolio = () => {
     "Java",
     "SQL",
     "JavaScript",
-    "React"
+    "React",
   ];
 
   const experience = [
@@ -30,10 +34,12 @@ const Portfolio = () => {
       period: "September 2025 - Present",
       location: "Gurugram",
       description: [
-
+        // "abc",
+        // "pqr",
+        // "xyz",
       ],
       technologies: ["Java", "Spring Boot", "PostgreSQL", "React", "Docker"],
-      image: scImage
+      image: scImage,
     },
     {
       title: "Open-Source Contributor",
@@ -41,21 +47,23 @@ const Portfolio = () => {
       period: "May 2024 - September 2024",
       location: "Remote",
       description: [
-
+        // "abc",
+        // "pqr",
+        // "xyz",
       ],
       technologies: ["Python", "JavaScript", "Git", "Linux", "API Development"],
-      image: gsImage
+      image: gsImage,
     }
   ];
 
   const education = [
     {
       degree: "Bachelor of Technology",
-      school: "Indian Institute of Technology (BHU), Varanasi",
+      school: "Indian Institute of Technology (BHU) Varanasi",
       period: "2021 - 2025",
       location: "Varanasi",
       additional: "(Mechanical Engineering)",
-      image: iitImage
+      image: iitImage,
     }
   ];
 
@@ -65,28 +73,32 @@ const Portfolio = () => {
       rating: 1980,
       label: "Knight",
       questions: "650+",
-      contests: "80+"
+      contests: "80+",
+      image: lcImage,
     },
     {
       title: "Codeforces",
       rating: 1410,
       label: "Specialist",
       questions: "250+",
-      contests: "50+"
+      contests: "50+",
+      image: cfImage,
     },
     {
       title: "CodeChef",
       rating: 1669,
       label: "3 ⭐",
       questions: "250+",
-      contests: "50+"
+      contests: "50+",
+      image: ccImage,
     },
     {
       title: "GeeksforGeeks",
       rating: 1963,
       label: "4 ⭐",
       questions: "150+",
-      contests: "10+"
+      contests: "10+",
+      image: gfgImage,
     }
   ];
 
@@ -115,12 +127,12 @@ const Portfolio = () => {
   ];
 
   const navs = [
-    { name: "About", id: "about" },
-    { name: "Skills", id: "skills" },
+    { name: "Profile", id: "profile" },
     { name: "Experience", id: "experience" },
     { name: "Education", id: "education" },
     { name: "Achievements", id: "achievements" },
-    { name: "Projects", id: "projects" }
+    { name: "Skills", id: "skills" },
+    { name: "Projects", id: "projects" },
   ];
 
   const NAVBAR_HEIGHT = 136;
@@ -192,7 +204,7 @@ const Portfolio = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="about" className="hero-section">
+      <section id="profile" className="hero-section">
         <div className="hero-pattern"></div>
         <div className="hero-gradient"></div>
 
@@ -229,28 +241,9 @@ const Portfolio = () => {
 
       <div className="content-container">
         <div className="container">
-          {/* Skills Section */}
-          <section id="skills" className="section">
-            <h2 className="section-title">
-              Skills
-            </h2>
-
-            <div className="skills-container">
-              {skills.map((skill, index) => (
-                <div
-                  key={skill}
-                  className="skill-badge"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  {skill}
-                </div>
-              ))}
-            </div>
-          </section>
-
           {/* Experience Section */}
           <section id="experience" className="section">
-            <h2 className="section-title">
+            <h2 className="section-title" style={{ paddingTop: "2px" }}>
               Experience
             </h2>
 
@@ -273,7 +266,7 @@ const Portfolio = () => {
                         </div>
                       </div>
                       <div className="experience-meta">
-                        <div className="meta-item" style={{ marginRight: "5px" }}>
+                        <div className="meta-item" style={{ marginRight: "4px" }}>
                           <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
                             <line x1="16" y1="2" x2="16" y2="6" />
@@ -287,19 +280,21 @@ const Portfolio = () => {
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                             <circle cx="12" cy="10" r="3" />
                           </svg>
-                          <span>{job.location}</span>
+                          <span style={{ marginLeft: "-2px" }}>{job.location}</span>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div className="card-content" style={{ marginBottom: `${job.description.length === 0 && job.technologies.length === 0 ? "-35px" : "-5px"}` }}>
-                    <p className="card-description">
-                      {job.description.map((point, idx) => (
-                        <li key={idx} className="card-description" style={{ marginLeft: "12px" }}>{point}</li>
-                      ))}
+                    <p className="project-description">
+                      <ul>
+                        {job.description.map((point, idx) => (
+                          <li key={idx} className="project-description" style={{ marginLeft: "12px" }}>{point}</li>
+                        ))}
+                      </ul>
                     </p>
                     {job.technologies && job.technologies.length > 0 && (
-                      <div className="tech-badges" style={{ marginTop: "12px" }}>
+                      <div className="tech-badges" style={{ marginTop: "12px", marginBottom: "7px" }}>
                         {job.technologies.map((tech) => (
                           <span key={tech} className="tech-badge">
                             {tech}
@@ -338,7 +333,7 @@ const Portfolio = () => {
                         </div>
                       </div>
                       <div className="experience-meta">
-                        <div className="meta-item" style={{ marginRight: "5px" }}>
+                        <div className="meta-item" style={{ marginRight: "4px" }}>
                           <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
                             <line x1="16" y1="2" x2="16" y2="6" />
@@ -352,11 +347,11 @@ const Portfolio = () => {
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                             <circle cx="12" cy="10" r="3" />
                           </svg>
-                          <span>{edu.location}</span>
+                          <span style={{ marginLeft: "-2px" }}>{edu.location}</span>
                         </div>
                       </div>
                     </div>
-                    {edu.additional && <p className="card-company" style={{ fontSize: "small", marginTop: "-3px", marginLeft: "64px" }}>{edu.additional}</p>}
+                    {edu.additional && <p className="card-company" style={{ fontSize: "small", marginTop: "-3px", marginLeft: "64px", paddingBottom: "2px", fontStyle: "italic" }}>{edu.additional}</p>}
                   </div>
                 </div>
               ))}
@@ -377,10 +372,10 @@ const Portfolio = () => {
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   <div className="card-header" style={{ display: "flex", gap: "16px", alignItems: "center" }}>
-                    <img src="https://placehold.co/48x48" alt={achievement.title} className="company-logo" />
-                    <h3 className="card-title">{achievement.title}</h3>
+                    <img src={achievement.image} alt={achievement.title} className="company-logo" />
+                    <h3 className="card-title" style={{ paddingTop: "4px" }}>{achievement.title}</h3>
                   </div>
-                  <div className="card-content project-content" style={{ marginBottom: "-14px" }}>
+                  <div className="card-content project-content" style={{ marginBottom: "-14px", marginTop: "0px" }}>
                     <div className="tech-badges">
                       <span className="tech-badge">{achievement.rating}</span>
                       <span className="tech-badge">{achievement.label}</span>
@@ -388,6 +383,25 @@ const Portfolio = () => {
                       <span className="tech-badge">{achievement.contests} contests</span>
                     </div>
                   </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Skills Section */}
+          <section id="skills" className="section">
+            <h2 className="section-title" style={{ paddingTop: "5px" }}>
+              Skills
+            </h2>
+
+            <div className="skills-container">
+              {skills.map((skill, index) => (
+                <div
+                  key={skill}
+                  className="skill-badge"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  {skill}
                 </div>
               ))}
             </div>
@@ -408,7 +422,7 @@ const Portfolio = () => {
                 >
                   <img src="https://placehold.co/400x200" alt={project.title} className="project-image" />
                   <div className="card-header">
-                    <h3 className="card-title">{project.title}</h3>
+                    <h3 className="card-title" style={{ marginTop: "-4px" }}>{project.title}</h3>
                     <p className="project-description">
                       <ul>
                         {project.description.map((point, idx) => (
@@ -428,7 +442,7 @@ const Portfolio = () => {
                       </div>
                     </div>
 
-                    <div className="project-links" style={{ marginBottom: "-3px" }}>
+                    <div className="project-links" style={{ marginBottom: "-3px", marginTop: "3px" }}>
                       <a
                         href={project.github}
                         className="project-link"
