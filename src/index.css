@@ -35,37 +35,37 @@ img {
   height: auto;
 }
 
-/* Design System - True Purple Theme (#800080) */
+/* Design System - Indigo Theme (#4F46E5) */
 :root {
-  --primary: 300 100% 25%;
+  --primary: 239 84% 67%;
   --primary-foreground: 0 0% 100%;
-  --primary-glow: 300 80% 45%;
-  --secondary: 300 47% 96%;
-  --secondary-foreground: 300 100% 18%;
-  --accent: 300 90% 35%;
+  --primary-glow: 239 84% 77%;
+  --secondary: 239 47% 96%;
+  --secondary-foreground: 239 84% 18%;
+  --accent: 239 90% 55%;
   --accent-foreground: 0 0% 100%;
-  --muted: 300 30% 94%;
-  --muted-foreground: 300 10% 45%;
+  --muted: 239 30% 94%;
+  --muted-foreground: 239 10% 45%;
   --background: 0 0% 100%;
-  --foreground: 300 10% 20%;
+  --foreground: 239 10% 20%;
   --card: 0 0% 100%;
-  --card-foreground: 300 10% 20%;
-  --border: 300 20% 90%;
-  --input: 300 20% 90%;
-  --ring: 300 100% 25%;
+  --card-foreground: 239 10% 20%;
+  --border: 239 20% 90%;
+  --input: 239 20% 90%;
+  --ring: 239 84% 67%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
   --popover: 0 0% 100%;
-  --popover-foreground: 300 10% 20%;
+  --popover-foreground: 239 10% 20%;
   --radius: 0.5rem;
   
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #800080, #a020a0);
-  --gradient-hero: linear-gradient(to right, #800080, #a020a0);
+  --gradient-primary: linear-gradient(135deg, #4F46E5, #6366F1);
+  --gradient-hero: linear-gradient(135deg, #4F46E5, #6366F1);
   
   /* Shadows */
-  --shadow-glow: 0 0 40px rgba(128, 0, 128, 0.4);
-  --shadow-elegant: 0 10px 30px -10px rgba(128, 0, 128, 0.3);
+  --shadow-glow: 0 0 40px rgba(79, 70, 229, 0.4);
+  --shadow-elegant: 0 10px 30px -10px rgba(79, 70, 229, 0.3);
 }
 
 /* Remove any remaining Tailwind references */
