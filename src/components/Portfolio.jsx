@@ -204,7 +204,7 @@ const Portfolio = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="profile" className="hero-section bg-gradient-to-b from-gray-900 via-purple-900 to-gray-900">
+      <section id="profile" className="hero-section bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
         <div className="hero-pattern"></div>
         <div className="hero-gradient"></div>
 
