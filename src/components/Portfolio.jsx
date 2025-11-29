@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Linkedin, Github, Mail } from "lucide-react";
+import { Linkedin, Github } from "lucide-react";
 import "./Portfolio.css";
 import profileImage from "../assets/profile-image.png";
 import scImage from "../assets/sc.png";
@@ -219,36 +219,11 @@ const Portfolio = () => {
                 B.Tech graduate from IIT BHU with a strong foundation in Problem-Solving, having practiced 1300+ problems, and with a command of Computer Science Fundamentals — enthusiastic about Full-Stack Development and Open-Source.
               </p>
 
-              <h2 className="hero-subtitle" style={{ marginTop: '32px', fontSize: '1.5rem', fontWeight: '600' }}>
-                Let's work together
-              </h2>
-              
-              <p className="hero-description" style={{ marginBottom: '16px' }}>
-                Whether you're looking for collaboration, have questions about my work, or want to discuss opportunities, I'd love to hear from you.
-              </p>
-
-              <div className="contact-links" style={{ flexDirection: 'column', alignItems: 'flex-start', gap: '16px' }}>
-                <div>
-                  <h4 style={{ fontSize: '0.875rem', fontWeight: '600', marginBottom: '8px', color: 'rgba(255, 255, 255, 0.9)' }}>Email</h4>
-                  <a href="mailto:ashutoshverma@example.com" className="contact-link" style={{ padding: '0' }}>
-                    <Mail size={20} />
-                    <span>ashutoshverma@example.com</span>
-                  </a>
-                </div>
-                
-                <div>
-                  <h4 style={{ fontSize: '0.875rem', fontWeight: '600', marginBottom: '8px', color: 'rgba(255, 255, 255, 0.9)' }}>Connect with me</h4>
-                  <div style={{ display: 'flex', gap: '16px' }}>
-                    <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="contact-link" style={{ padding: '0' }}>
-                      <Github size={20} />
-                      <span>GitHub</span>
-                    </a>
-                    <a href="https://linkedin.com/in/-ashutosh-verma" target="_blank" rel="noopener noreferrer" className="contact-link" style={{ padding: '0' }}>
-                      <Linkedin size={20} />
-                      <span>LinkedIn</span>
-                    </a>
-                  </div>
-                </div>
+              <div className="contact-links">
+                <a href="https://linkedin.com/in/-ashutosh-verma" target="_blank" rel="noopener noreferrer" className="contact-link">
+                  <Linkedin size={20} />
+                  <span>LinkedIn</span>
+                </a>
               </div>
             </div>
 
