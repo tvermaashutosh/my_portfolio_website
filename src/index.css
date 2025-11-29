@@ -35,37 +35,37 @@ img {
   height: auto;
 }
 
-/* Design System - Indigo Theme (#4F46E5) */
+/* Design System - True Indigo Theme (#4B0082) */
 :root {
-  --primary: 239 84% 67%;
+  --primary: 275 100% 25.5%;
   --primary-foreground: 0 0% 100%;
-  --primary-glow: 239 84% 77%;
-  --secondary: 239 47% 96%;
-  --secondary-foreground: 239 84% 18%;
-  --accent: 239 90% 55%;
+  --primary-glow: 275 80% 45%;
+  --secondary: 275 47% 96%;
+  --secondary-foreground: 275 100% 18%;
+  --accent: 275 90% 35%;
   --accent-foreground: 0 0% 100%;
-  --muted: 239 30% 94%;
-  --muted-foreground: 239 10% 45%;
+  --muted: 275 30% 94%;
+  --muted-foreground: 275 10% 45%;
   --background: 0 0% 100%;
-  --foreground: 239 10% 20%;
+  --foreground: 275 10% 20%;
   --card: 0 0% 100%;
-  --card-foreground: 239 10% 20%;
-  --border: 239 20% 90%;
-  --input: 239 20% 90%;
-  --ring: 239 84% 67%;
+  --card-foreground: 275 10% 20%;
+  --border: 275 20% 90%;
+  --input: 275 20% 90%;
+  --ring: 275 100% 25.5%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
   --popover: 0 0% 100%;
-  --popover-foreground: 239 10% 20%;
+  --popover-foreground: 275 10% 20%;
   --radius: 0.5rem;
   
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #4F46E5, #6366F1);
-  --gradient-hero: linear-gradient(135deg, #4F46E5, #6366F1);
+  --gradient-primary: linear-gradient(135deg, #4B0082, #6A0DAD);
+  --gradient-hero: linear-gradient(135deg, #4B0082, #6A0DAD);
   
   /* Shadows */
-  --shadow-glow: 0 0 40px rgba(79, 70, 229, 0.4);
-  --shadow-elegant: 0 10px 30px -10px rgba(79, 70, 229, 0.3);
+  --shadow-glow: 0 0 40px rgba(75, 0, 130, 0.4);
+  --shadow-elegant: 0 10px 30px -10px rgba(75, 0, 130, 0.3);
 }
 
 /* Remove any remaining Tailwind references */
