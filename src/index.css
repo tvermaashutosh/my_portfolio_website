@@ -35,37 +35,37 @@ img {
   height: auto;
 }
 
-/* Design System - Purple Theme */
+/* Design System - True Purple Theme (#800080) */
 :root {
-  --primary: 280 80% 60%;
+  --primary: 300 100% 25%;
   --primary-foreground: 0 0% 100%;
-  --primary-glow: 285 85% 70%;
-  --secondary: 280 47% 96%;
-  --secondary-foreground: 280 80% 18%;
-  --accent: 290 85% 65%;
+  --primary-glow: 300 80% 45%;
+  --secondary: 300 47% 96%;
+  --secondary-foreground: 300 100% 18%;
+  --accent: 300 90% 35%;
   --accent-foreground: 0 0% 100%;
-  --muted: 280 30% 94%;
-  --muted-foreground: 280 10% 45%;
+  --muted: 300 30% 94%;
+  --muted-foreground: 300 10% 45%;
   --background: 0 0% 100%;
-  --foreground: 280 10% 20%;
+  --foreground: 300 10% 20%;
   --card: 0 0% 100%;
-  --card-foreground: 280 10% 20%;
-  --border: 280 20% 90%;
-  --input: 280 20% 90%;
-  --ring: 280 80% 60%;
+  --card-foreground: 300 10% 20%;
+  --border: 300 20% 90%;
+  --input: 300 20% 90%;
+  --ring: 300 100% 25%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
   --popover: 0 0% 100%;
-  --popover-foreground: 280 10% 20%;
+  --popover-foreground: 300 10% 20%;
   --radius: 0.5rem;
   
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #a855f7, #c084fc);
-  --gradient-hero: linear-gradient(to right, #a855f7, #c026d3);
+  --gradient-primary: linear-gradient(135deg, #800080, #a020a0);
+  --gradient-hero: linear-gradient(to right, #800080, #a020a0);
   
   /* Shadows */
-  --shadow-glow: 0 0 40px rgba(168, 85, 247, 0.4);
-  --shadow-elegant: 0 10px 30px -10px rgba(168, 85, 247, 0.3);
+  --shadow-glow: 0 0 40px rgba(128, 0, 128, 0.4);
+  --shadow-elegant: 0 10px 30px -10px rgba(128, 0, 128, 0.3);
 }
 
 /* Remove any remaining Tailwind references */
