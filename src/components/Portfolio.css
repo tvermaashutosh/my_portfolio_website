@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Navbar Styles */
 .navbar {
   position: fixed;
@@ -127,7 +131,7 @@
 .hero-section {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #4B0082, #6A0DAD);
+  /* background: linear-gradient(135deg, #4B0082, #6A0DAD); */
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -145,7 +149,7 @@
 .hero-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
+  /* background: linear-gradient(to left, rgba(255, 255, 255, 0.3) 0%, transparent 50%); */
   pointer-events: none;
 }
 
