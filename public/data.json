@@ -1,28 +1,37 @@
 {
   "profile": {
     "name": "Ashutosh Verma",
-    "description": "B.Tech graduate from IIT BHU with a strong foundation in Problem-Solving, having practiced 1300+ problems, and with a command of Computer Science Fundamentals — enthusiastic about Full-Stack Development and Open-Source.",
+    "description": "Software Development Engineer with a strong foundation in problem-solving, having practiced 1400+ coding questions, and well-versed in Computer Science fundamentals. Experienced in backend-focused full-stack development and an open-source contributor to large-scale applications.",
     "linkedinUrl": "https://linkedin.com/in/-ashutosh-verma",
     "image": "/image.png"
   },
   "experience": [
     {
-      "title": "Software Engineer-I",
       "company": "SalesCode.ai",
-      "period": "September 2025 - Present",
+      "title": "Software Engineer-I",
+      "period": "Sept 2025 - Present",
       "location": "Gurugram",
-      "description": [],
-      "technologies": ["Java", "Spring Boot", "PostgreSQL", "React", "Docker"],
+      "description": [
+        "Delivered a multi-tenant promo-service serving 10+ clients, driving promo listing and order application.",
+        "Incorporated Kafka producer-consumer pipelines for bulk uploads and quantity-purchase aggregations, optimizing promo fetch response latency by 20%.",
+        "Devised a config-driven HTTP engine abstracting inbound API contracts, enabling zero-code onboarding."
+      ],
+      "technologies": ["Spring Boot", "Spring Security", "Kafka", "Hibernate", "SQL"],
       "image": "/sc.png"
     },
     {
-      "title": "Open-Source Contributor",
       "company": "Google Summer of Code",
-      "period": "May 2024 - September 2024",
+      "title": "Open-Source Contributor - VideoLAN",
+      "period": "May 2024 - Sept 2024",
       "location": "Remote",
-      "description": [],
-      "technologies": ["Python", "JavaScript", "Git", "Linux", "API Development"],
-      "image": "/gsoc.png"
+      "description": [
+        "Engineered VLC Media Player’s Home view, featuring 3 media discovery sections enhancing accessibility.",
+        "Shipped 7+ APIs in the Media Library powering unified audio-video retrieval and history search, reducing query overhead and eliminating redundant media calls.",
+        "Introduced 4+ QtCore C++ backend models and 5+ QtQuick QML frontend views, refining modularity."
+      ],
+      "technologies": ["Qt", "QML", "JavaScript", "C++", "C", "Git"],
+      "image": "/gsoc.png",
+      "link": "https://summerofcode.withgoogle.com/programs/2024/projects/rMR9DdYk"
     }
   ],
   "education": [
@@ -82,27 +91,28 @@
   ],
   "projects": [
     {
-      "title": "Hospital Management System",
+      "title": "Product Analytics System",
       "description": [
-        "Built a scalable application covering 5 entities: patients, doctors, appointments, departments, and insurances.",
-        "Programmed RESTful APIs providing CRUD operations along with enforced entity relationships, database constraints, and input validation.",
-        "Utilized JSON Web Tokens for authentication and enabled role-based authorization for 3 user roles."
+        "Built a system to track views and provide analytics, using Kafka for asynchronous event processing.",
+        "Designed a flexible caching system supporting 2 eviction strategies (LRU, LFU) and 3 write policies (write-through, write-back, write-around) to improve performance.",
+        "Integrated LLM-powered natural language to SQL query generation, enabling users to query analytics data."
       ],
-      "technologies": ["Spring Boot", "Spring MVC", "Spring Data JPA", "Spring Security"],
-      "image": "/hospital.png",
-      "link": "#",
-      "code": "https://github.com/tvermaashutosh/springBoot_hospitalApplication"
+      "technologies": ["Spring Boot", "Kafka", "SQL", "React"],
+      "image": "/analytics.png",
+      "link": "https://springboot-productanalytics.onrender.com/api/swagger-ui/index.html",
+      "code": "https://github.com/tvermaashutosh/springBoot_productAnalytics"
     },
     {
-      "title": "News Torrent",
+      "title": "Hospital Management Application",
       "description": [
-        "Created a real-time news and searchable articles online service leveraging The New York Times as its source.",
-        "Delivered up-to-date news coverage as Top Stories across 26 distinct sections and served Article Search functionality through user-provided search props."
+        "Coded a scalable application with 5 entities: patients, doctors, appointments, departments, and insurances.",
+        "Programmed RESTful APIs providing CRUD operations along with enforced entity relationships, database constraints, and input validation",
+        "Utilized JSON Web Tokens for authentication and enabled role-based authorization for 3 user roles."
       ],
-      "technologies": ["React"],
-      "image": "/analytics.png",
-      "link": "#",
-      "code": "#"
+      "technologies": ["Spring MVC", "Spring Data JPA", "Spring Security", "SQL"],
+      "image": "/hospital.png",
+      "link": "https://springboot-hospitalapplication.onrender.com/api/swagger-ui/index.html",
+      "code": "https://github.com/tvermaashutosh/springBoot_hospitalApplication"
     }
   ],
   "navs": [
