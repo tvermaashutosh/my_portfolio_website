@@ -1,0 +1,119 @@
+{
+  "profile": {
+    "name": "Ashutosh Verma",
+    "description": "B.Tech graduate from IIT BHU with a strong foundation in Problem-Solving, having practiced 1300+ problems, and with a command of Computer Science Fundamentals — enthusiastic about Full-Stack Development and Open-Source.",
+    "linkedinUrl": "https://linkedin.com/in/-ashutosh-verma",
+    "image": "/image.png"
+  },
+  "experience": [
+    {
+      "title": "Software Engineer-I",
+      "company": "SalesCode.ai",
+      "period": "September 2025 - Present",
+      "location": "Gurugram",
+      "description": [],
+      "technologies": ["Java", "Spring Boot", "PostgreSQL", "React", "Docker"],
+      "image": "/sc.png"
+    },
+    {
+      "title": "Open-Source Contributor",
+      "company": "Google Summer of Code",
+      "period": "May 2024 - September 2024",
+      "location": "Remote",
+      "description": [],
+      "technologies": ["Python", "JavaScript", "Git", "Linux", "API Development"],
+      "image": "/gsoc.png"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Technology",
+      "school": "Indian Institute of Technology (BHU) Varanasi",
+      "period": "2021 - 2025",
+      "location": "Varanasi",
+      "image": "/iitBhu.png"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "LeetCode",
+      "rating": 2025,
+      "label": "Knight",
+      "questions": "750+",
+      "contests": "80+",
+      "image": "/lc.png"
+    },
+    {
+      "title": "Codeforces",
+      "rating": 1410,
+      "label": "Specialist",
+      "questions": "250+",
+      "contests": "50+",
+      "image": "/cf.png"
+    },
+    {
+      "title": "CodeChef",
+      "rating": 1669,
+      "label": "3 ⭐",
+      "questions": "250+",
+      "contests": "50+",
+      "image": "/cc.png"
+    },
+    {
+      "title": "GeeksforGeeks",
+      "rating": 1963,
+      "label": "4 ⭐",
+      "questions": "150+",
+      "contests": "10+",
+      "image": "/gfg.png"
+    }
+  ],
+  "skills": [
+    "Data Structures and Algorithms",
+    "Object-Oriented Programming",
+    "Database Management Systems",
+    "Operating Systems",
+    "Design Patterns",
+    "Spring Boot",
+    "Java",
+    "SQL",
+    "JavaScript",
+    "React"
+  ],
+  "projects": [
+    {
+      "title": "Hospital Management System",
+      "description": [
+        "Built a scalable application covering 5 entities: patients, doctors, appointments, departments, and insurances.",
+        "Programmed RESTful APIs providing CRUD operations along with enforced entity relationships, database constraints, and input validation.",
+        "Utilized JSON Web Tokens for authentication and enabled role-based authorization for 3 user roles."
+      ],
+      "technologies": ["Spring Boot", "Spring MVC", "Spring Data JPA", "Spring Security"],
+      "image": "/hospital.png",
+      "link": "#",
+      "code": "https://github.com/tvermaashutosh/springBoot_hospitalApplication"
+    },
+    {
+      "title": "News Torrent",
+      "description": [
+        "Created a real-time news and searchable articles online service leveraging The New York Times as its source.",
+        "Delivered up-to-date news coverage as Top Stories across 26 distinct sections and served Article Search functionality through user-provided search props."
+      ],
+      "technologies": ["React"],
+      "image": "/analytics.png",
+      "link": "#",
+      "code": "#"
+    }
+  ],
+  "navs": [
+    { "name": "Profile", "id": "profile" },
+    { "name": "Experience", "id": "experience" },
+    { "name": "Education", "id": "education" },
+    { "name": "Achievements", "id": "achievements" },
+    { "name": "Skills", "id": "skills" },
+    { "name": "Projects", "id": "projects" }
+  ],
+  "footer": {
+    "githubUrl": "https://github.com/tvermaashutosh/my_portfolio_website"
+  }
+}
