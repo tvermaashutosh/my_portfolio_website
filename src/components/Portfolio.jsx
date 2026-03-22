@@ -8,9 +8,10 @@ const handleScroll = (navs, setIsScrolled, setActiveSection) => {
   setIsScrolled(window.scrollY > 50);
 
   const sections = navs
-    .map(item => {
-      const el = document.getElementById(item.id);
-      return el ? { id: item.id, top: el.getBoundingClientRect().top + window.scrollY } : null;
+    .map(name => {
+      const id = name.toLowerCase();
+      const el = document.getElementById(id);
+      return el ? { id, top: el.getBoundingClientRect().top + window.scrollY } : null;
     })
     .filter(Boolean);
 
@@ -68,16 +69,19 @@ const Portfolio = () => {
       <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
         <div className="navbar-container">
           <ul className={`navbar-nav ${isMobileMenuOpen ? "mobile-open" : ""}`}>
-            {navs.map((item) => (
-              <li key={item.id}>
-                <a
-                  className={`navbar-link ${activeSection === item.id ? "active" : ""}`}
-                  onClick={() => scrollToSection(item.id, setActiveSection, setIsMobileMenuOpen)}
-                >
-                  {item.name}
-                </a>
-              </li>
-            ))}
+            {navs.map((name) => {
+              const id = name.toLowerCase();
+              return (
+                <li key={name}>
+                  <a
+                    className={`navbar-link ${activeSection === id ? "active" : ""}`}
+                    onClick={() => scrollToSection(id, setActiveSection, setIsMobileMenuOpen)}
+                  >
+                    {name}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
 
           <button
@@ -106,7 +110,7 @@ const Portfolio = () => {
               </p>
 
               <div className="contact-links">
-                <a href={profile.linkedinUrl} target="_blank" rel="noopener noreferrer" className="contact-link">
+                <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="contact-link">
                   <Linkedin size={20} />
                   <span>LinkedIn</span>
                 </a>
@@ -380,7 +384,7 @@ const Portfolio = () => {
         <div className="container">
           <div className="footer-content" style={{ display: "flex", justifyContent: "center" }}>
             <div className="contact-links">
-              <a href={footer.githubUrl} target="_blank" rel="noopener noreferrer" className="contact-link footer-content">
+              <a href={footer.github} target="_blank" rel="noopener noreferrer" className="contact-link footer-content">
                 <Github size={20} />
                 <span>GitHub</span>
               </a>

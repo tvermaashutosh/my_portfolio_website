@@ -1,8 +1,8 @@
 {
   "profile": {
     "name": "Ashutosh Verma",
-    "description": "Software Development Engineer with a strong foundation in problem-solving, having practiced 1400+ coding questions, and well-versed in Computer Science fundamentals. Experienced in backend-focused full-stack development and an open-source contributor to large-scale applications.",
-    "linkedinUrl": "https://linkedin.com/in/-ashutosh-verma",
+    "description": "Software Development Engineer with a strong foundation in problem-solving, having practiced 1500+ coding questions, and well-versed in Computer Science fundamentals. Experienced in backend-focused full-stack development and an open-source contributor to large-scale applications.",
+    "linkedin": "https://linkedin.com/in/-ashutosh-verma",
     "image": "/image.png"
   },
   "experience": [
@@ -115,15 +115,8 @@
       "code": "https://github.com/tvermaashutosh/springBoot_hospitalApplication"
     }
   ],
-  "navs": [
-    { "name": "Profile", "id": "profile" },
-    { "name": "Experience", "id": "experience" },
-    { "name": "Education", "id": "education" },
-    { "name": "Achievements", "id": "achievements" },
-    { "name": "Skills", "id": "skills" },
-    { "name": "Projects", "id": "projects" }
-  ],
+  "navs": ["Profile", "Experience", "Education", "Achievements", "Skills", "Projects"],
   "footer": {
-    "githubUrl": "https://github.com/tvermaashutosh/my_portfolio_website"
+    "github": "https://github.com/tvermaashutosh/my_portfolio_website"
   }
 }
