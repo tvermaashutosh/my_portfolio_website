@@ -46,9 +46,10 @@ const Portfolio = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch("/data.json")
+    fetch("https://api.jsonbin.io/v3/b/6a5cc9caf5f4af5e29a3d5dd/latest")
       .then((res) => res.json())
-      .then((json) => setData(json));
+      .then((json) => setData(json.record))
+      .catch(() => fetch("/data.json").then((res) => res.json()).then(setData));
   }, []);
 
   useEffect(() => {
