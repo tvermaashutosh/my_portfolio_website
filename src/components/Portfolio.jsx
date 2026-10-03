@@ -264,6 +264,25 @@ const Portfolio = () => {
             </div>
           </section>
 
+          {/* Skills Section */}
+          <section id="skills" className="section">
+            <h2 className="section-title" style={{ paddingTop: "5px" }}>
+              Skills
+            </h2>
+
+            <div className="skills-container">
+              {skills.map((skill, index) => (
+                <div
+                  key={skill}
+                  className="skill-badge"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  {skill}
+                </div>
+              ))}
+            </div>
+          </section>
+
           {/* Achievements Section */}
           <section id="achievements" className="section">
             <h2 className="section-title">
@@ -289,25 +308,6 @@ const Portfolio = () => {
                       <span className="tech-badge">{achievement.contests} contests</span>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Skills Section */}
-          <section id="skills" className="section">
-            <h2 className="section-title" style={{ paddingTop: "5px" }}>
-              Skills
-            </h2>
-
-            <div className="skills-container">
-              {skills.map((skill, index) => (
-                <div
-                  key={skill}
-                  className="skill-badge"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  {skill}
                 </div>
               ))}
             </div>
